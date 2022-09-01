@@ -17,6 +17,10 @@ const Items = (props) => {
         setToDos(toDos.filter(item => item.id != itemId));
         console.log("test this",itemId, toDos);
     };
+    function addItemHandeler(itemId){
+        setToDos(toDos.filter(item => item.id != itemId));
+        console.log("test this",itemId, toDos);
+    };
     return(
         <ul>
             <InputForm className={classes.form}/>

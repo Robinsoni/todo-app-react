@@ -6,20 +6,88 @@ li{
     cursor: pointer;
 }
 input{
-    width: 80%;
-    color: black;
-    float: left;
+   /* width: 100%; */
+    /* color: black;
+    display: block;
     outline: none;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px; */
 }
 
 .form{
-    display: flex;
+    position: absolute;
+   
+    opacity: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 30%;
+    height: 40%;
+    background: #ec4949;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px black;
+    min-height: 300px;
+    min-width: 200px;
+}
+.container{
+    width: 80%;
+    
+    margin: auto;
+    height: 100%;
+}
+.container input, textarea, button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    color: black;
+    display: block;
+    outline: none;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+}
+.container textarea{
+    resize: none;
+}
+.button{
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+.button:hover{
+    cursor: pointer;
+}
+.button.add{
+    background: grey;
+    color: white;
+}
+.addTask{
+    margin-top: 0;
+    margin-bottom: 10px;
+    background: #3b86d7;;
+}
+.button.cancel{
+    background: rgb(125, 13, 13);
+    color: white;
+}
+/* .form textarea{
+    display: block;
+} */
+.modal{
+    border: 1px solid rgb(159, 79, 4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: gray;
+    opacity: .95;
+    z-index: 5;
 }
 .form span:last-child{
-   
     box-sizing: border-box;
-   /*  border: 1px solid rgb(101, 255, 59); */
-
     text-align: center;
 }
 
