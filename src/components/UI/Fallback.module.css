@@ -1,0 +1,15 @@
+.fallback{
+    /* border: 1px solid blue; */
+    text-align: center;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    background:#373737;;
+    box-shadow: 3px 3px 5px 6px #424242;;
+}
+.fallback  div{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}

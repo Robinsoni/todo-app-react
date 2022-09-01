@@ -1,0 +1,17 @@
+ul{
+   border: 1px solid blue;
+   list-style: none;
+   width: 30%;
+   margin: auto;
+    padding: 0;
+}
+ul  li{
+    padding: 15px;
+    border-radius: 10px;
+    background: #494b4d;
+    margin-bottom: 5px;   
+}
+.form{
+    margin-bottom: 5px;   
+
+}

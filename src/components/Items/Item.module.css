@@ -1,0 +1,42 @@
+li{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    box-shadow: 2px 1px 0px 1px #403f3f;
+    cursor: pointer;
+}
+input{
+    width: 80%;
+    color: black;
+    float: left;
+    outline: none;
+}
+
+.form{
+    display: flex;
+}
+.form span:last-child{
+   
+    box-sizing: border-box;
+   /*  border: 1px solid rgb(101, 255, 59); */
+
+    text-align: center;
+}
+
+li span:last-child{
+    text-align: center;
+   width: 15px;
+   transition-timing-function: cubic-bezier(.55,.45,.72,.81);
+   user-select:none;
+   font-weight: bolder;
+}
+span.cross{
+    display: block;
+    scale: 0.8; 
+    transform:   rotate(45deg);
+}
+li span:last-child:hover{
+    scale: 1;
+    cursor: pointer;
+   
+}
