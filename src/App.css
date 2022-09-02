@@ -8,7 +8,7 @@
   height: 100vh;
 }
 header{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: 10%;
   position: relative;
 }

@@ -4,6 +4,7 @@ li{
     box-sizing: border-box;
     box-shadow: 2px 1px 0px 1px #403f3f;
     cursor: pointer;
+    user-select: none;
 }
 input{
    /* width: 100%; */
@@ -24,7 +25,7 @@ input{
     transform: translate(-50%,-50%);
     width: 30%;
     height: 40%;
-    background: #ec4949;
+    background: #3b86d7;
     border-radius: 10px;
     box-shadow: 2px 2px 3px black;
     min-height: 300px;

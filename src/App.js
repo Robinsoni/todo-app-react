@@ -9,7 +9,7 @@ function App() {
       <header>
         <nav>To Do - Task Manager</nav>
       </header>
-        <div>Body</div>
+        <div></div>
         <Items></Items>
       </body>
     </Fragment>

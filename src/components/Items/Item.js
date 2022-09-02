@@ -4,7 +4,7 @@ export const InputForm = (props) => {
     const [isDisplay,setIsDisplay] = useState(false);
     const modalRef = useRef(null);
     const titleInputRef = useRef(null);
-    const titleTextRef = useRef(null);
+    const descTextRef = useRef(null);
 
 
    
@@ -14,7 +14,11 @@ export const InputForm = (props) => {
     }
     
     function sendTaskHandeler(){
-
+        let item = {
+            title:titleInputRef.current.value,
+            desc:descTextRef.current.value,
+        };
+        props.addItem(item);
     }
     useEffect(() => {
         modalRef.current.style.display = isDisplay?"block":"none";
@@ -30,7 +34,7 @@ export const InputForm = (props) => {
                                 <input ref={titleInputRef} placeholder="Please enter the task title"/>
                             </div>
                             <div>
-                                <textarea ref={titleTextRef} placeholder="Enter the detailed information"/>
+                                <textarea ref={descTextRef} placeholder="Enter the detailed information"/>
                             </div>
                             <div className={ classes.button +" "+ classes.add} onClick={sendTaskHandeler}>Add</div>
                             <div className={classes.button +" "+ classes.cancel} onClick={clickModalHandeler}>Cancel</div>
