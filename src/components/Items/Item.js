@@ -1,33 +1,23 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 import classes from "./Item.module.css";
+
 export const InputForm = (props) => {
     const [isDisplay,setIsDisplay] = useState(false);
-    const modalRef = useRef(null);
     const titleInputRef = useRef(null);
     const descTextRef = useRef(null);
-
-
-   
-    console.log("Check Modal Ref", modalRef);
     function clickModalHandeler(){
         setIsDisplay((prevState)=>!prevState);
     }
-    
     function sendTaskHandeler(){
         let item = {
             title:titleInputRef.current.value,
             desc:descTextRef.current.value,
         };
         props.addItem(item);
+        setIsDisplay((prevState)=>!prevState);
     }
-    useEffect(() => {
-        modalRef.current.style.display = isDisplay?"block":"none";
-    }, [isDisplay])
-    
-    return (
-        <Fragment>
-            <div className={classes.button+" "+classes.addTask} onClick={clickModalHandeler}>+Add task</div>
-                <div ref={modalRef} className={classes.modal}>
+    /* The Modal JSX could go into a saperate component and it will make the code cleaner */
+    let Modal =   <div  className={classes.modal}>
                     <div className={classes.form}>
                         <div className={classes.container}>
                             <div>
@@ -40,11 +30,28 @@ export const InputForm = (props) => {
                             <div className={classes.button +" "+ classes.cancel} onClick={clickModalHandeler}>Cancel</div>
                         </div>
                     </div>
-            </div>
+                </div>;
+
+    return (
+        <Fragment>
+            <div className={classes.button+" "+classes.addTask} onClick={clickModalHandeler}>+Add task</div>
+            {isDisplay && Modal}
         </Fragment>
     )
 };
 const Item = (props) => {
-    return <li><span>{props.title}</span><span onClick={props.deleteItem}><span className={classes.cross}>+</span></span></li>;
+    
+    let itemElement = <li>
+                        <span onClick={props.itemDetails}>{props.title}</span>
+                        <span onClick={props.deleteItem}>
+                            <span className={classes.cross}>+</span>
+                        </span>
+                    </li>;
+    return (
+        <Fragment>
+            {itemElement}
+            
+        </Fragment>
+    );
 };
 export default Item;

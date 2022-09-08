@@ -1,9 +1,11 @@
-ul{
-  
-   list-style: none;
-   width: 30%;
-   margin: auto;
-    padding: 0;
+ul {
+	list-style: none;
+	width: 30%;
+	margin: auto;
+	/* padding: 0; */
+	/* z-index: -1; */
+	/* position: relative; */
+	margin-top: 50px;
 }
 ul  li{
     padding: 15px;

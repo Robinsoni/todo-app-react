@@ -1,0 +1,24 @@
+
+div.title, div.desc{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    color: black;
+    background:white;
+    display: block;
+    outline: none;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+div.title{
+    max-height: 20%;
+    overflow: auto;
+}
+div.desc{
+    min-height: 20%;
+    max-height: 40%;
+    overflow: auto;
+    resize: vertical;
+}

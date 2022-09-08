@@ -1,13 +1,3 @@
-li{
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    box-shadow: 2px 1px 0px 1px #403f3f;
-    
-    user-select: none;
-}
- 
-
 .form{
     position: absolute;
    
@@ -64,6 +54,10 @@ li{
 .button.cancel{
     background: rgb(125, 13, 13);
     color: white;
+    position: fixed;
+    bottom: 25%;
+    width: inherit;
+    box-sizing: border-box;
 }
 /* .form textarea{
     display: block;
@@ -78,29 +72,4 @@ li{
     background: gray;
     opacity: .95;
     z-index: 5;
-}
-.form span:last-child{
-    box-sizing: border-box;
-    text-align: center;
-}
-
-li span:last-child{
-    text-align: center;
-   width: 15px;
-   transition-timing-function: cubic-bezier(.55,.45,.72,.81);
-   user-select:none;
-   font-weight: bolder;
-}
-span.cross{
-    display: block;
-    scale: 0.8; 
-    transform:   rotate(45deg);
-}
-li span:last-child:hover{
-    scale: 1;
-    cursor: pointer;
-   
-}
-span{
-    cursor: pointer;
 }

@@ -5,13 +5,11 @@ import Items from './components/Items/Items';
 function App() {
   return (
     <Fragment>
-      <body>
       <header>
         <nav>To Do - Task Manager</nav>
       </header>
         <div></div>
         <Items></Items>
-      </body>
     </Fragment>
     
     
