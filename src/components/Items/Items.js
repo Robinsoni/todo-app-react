@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, useState } from "react";
+import { useDispatch } from "react-redux";
+import { errorActions } from "../store/error";
 import Fallback from "../UI/Fallback";
 import Item, { InputForm } from "./Item";
 import ItemDetails from "./ItemDetails";
@@ -8,6 +10,7 @@ const Items = (props) => {
     const [toDos, setToDos] = useState([]);
     const [displayDetailsFlag, setDisplayDetailsFlag] = useState(false);
     const [selectedItem, setSelectedItem] = useState(undefined);
+    const dispatch = useDispatch();
     function deleteItemHandeler(itemId){
         setToDos(toDos.filter(item => item.id != itemId));
         console.log("test this",itemId, toDos);
@@ -16,12 +19,24 @@ const Items = (props) => {
         console.log("listItem**",listItem);
         if(!listItem.title.length || !listItem.desc.length){
             console.log("Please add title & desc");
+            console.log("err**",errorActions);
+            dispatch(errorActions.showMessage());
+            if(!listItem.title.length && !listItem.desc.length){
+                dispatch(errorActions.setErrorMsg("Please enter title and discription"));
+            }else if(!listItem.title.length){
+                dispatch(errorActions.setErrorMsg("Please enter title also."));
+            }else{
+                dispatch(errorActions.setErrorMsg("Please enter description also."));
+            }
             document.querySelector("header").classList.add("fade");
             setTimeout(function(){document.querySelector("header").classList.remove("fade")},1500);
             return;
+        }else{
+            dispatch( errorActions.hideMessage());
+            dispatch( errorActions.setErrorMsg(""));
+            let key = new Date();
+            setToDos(prevList =>  [...prevList,{"id":key.getTime(),...listItem}] );
         }
-        let key = new Date();
-        setToDos(prevList =>  [...prevList,{"id":key.getTime(),...listItem}] );
     };
     let itemDescription;
     function itemDetailsHandeler(itemId){
