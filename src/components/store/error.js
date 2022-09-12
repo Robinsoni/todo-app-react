@@ -14,7 +14,7 @@ const errorSlice = createSlice({
             state.showMessage = true;
         },
         setErrorMsg(state,action){
-            console.log("this will display the value of msg*", action.payload);
+            
             state.msg = action.payload;
         },    
     }

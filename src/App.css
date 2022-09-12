@@ -24,6 +24,12 @@ header {
   box-shadow:   0 2px 5px rgb(70, 58, 58);
   transition: border 1.5s;
 }
-header.fade{
-  border-bottom:1px solid red;
+ .fade{
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@keyframes fade {
+  from {border: none;}
+  to {border-bottom:1px solid red;}
 }

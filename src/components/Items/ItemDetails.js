@@ -3,7 +3,7 @@ import classes from "../UI/Backdrop.module.css";
 import detailsClasses from "./ItemDetails.module.css";
 
 const ItemDetails = (props) => {
-    console.log("*** ItemDetails props" ,  props);
+    
     return (
             <Backdrop>
                 

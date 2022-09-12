@@ -6,6 +6,11 @@
     padding: 30px;
     border-radius: 4px;
     text-align: center;
+    top:3%;
+}
+.animation{
+    animation-name: slideEffect;
+    animation-duration: 0.8s;
 }
 .container{
     background:rgb(185, 70, 70);
@@ -21,3 +26,9 @@ span.close{
     right: 23px;
     user-select: none;
 }
+@keyframes slideEffect {
+    from {
+        top:0;
+    }
+    to {top:3%}
+  }

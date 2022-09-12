@@ -13,13 +13,11 @@ const Items = (props) => {
     const dispatch = useDispatch();
     function deleteItemHandeler(itemId){
         setToDos(toDos.filter(item => item.id != itemId));
-        console.log("test this",itemId, toDos);
     };
+    
     function addItemHandeler(listItem){
-        console.log("listItem**",listItem);
         if(!listItem.title.length || !listItem.desc.length){
-            console.log("Please add title & desc");
-            console.log("err**",errorActions);
+            
             dispatch(errorActions.showMessage());
             if(!listItem.title.length && !listItem.desc.length){
                 dispatch(errorActions.setErrorMsg("Please enter title and discription"));
@@ -28,12 +26,10 @@ const Items = (props) => {
             }else{
                 dispatch(errorActions.setErrorMsg("Please enter description also."));
             }
-            document.querySelector("header").classList.add("fade");
-            setTimeout(function(){document.querySelector("header").classList.remove("fade")},1500);
+            
             return;
         }else{
-            dispatch( errorActions.hideMessage());
-            dispatch( errorActions.setErrorMsg(""));
+           
             let key = new Date();
             setToDos(prevList =>  [...prevList,{"id":key.getTime(),...listItem}] );
         }
@@ -41,19 +37,12 @@ const Items = (props) => {
     let itemDescription;
     function itemDetailsHandeler(itemId){
         setDisplayDetailsFlag(prev => !prev);
-        console.log("ItemId****",toDos);
         var item =  toDos.filter(item => item.id == itemId);
         setSelectedItem(item[0]);
-        
-        console.log("Item - ****",item);
-       /*  
-       console.log("listItem**",listItem);
-        setToDos(prevList =>  [...prevList,{"id":prevList.length?prevList.length:0,...listItem}] ); */
     };
     function closeHandeler(){
         setDisplayDetailsFlag(prev => !prev);
     }
-   
     let ItemList =  
              
 

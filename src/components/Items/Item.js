@@ -1,12 +1,17 @@
 import { Fragment, useEffect, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { errorActions } from "../store/error";
 import classes from "./Item.module.css";
 
 export const InputForm = (props) => {
     const [isDisplay,setIsDisplay] = useState(false);
     const titleInputRef = useRef(null);
     const descTextRef = useRef(null);
+    const dispatch  = useDispatch();
     function clickModalHandeler(){
         setIsDisplay((prevState)=>!prevState);
+        dispatch(errorActions.hideMessage());
+        dispatch(errorActions.setErrorMsg(""));
     }
     function sendTaskHandeler(){
         let item = {
@@ -42,9 +47,9 @@ export const InputForm = (props) => {
 const Item = (props) => {
     
     let itemElement = <li>
-                        <span onClick={props.itemDetails}>{props.title}</span>
+                        <span title="Click to see details" onClick={props.itemDetails}>{props.title}</span>
                         <span onClick={props.deleteItem}>
-                            <span className={classes.cross}>+</span>
+                            <span title="Remove the task" className={classes.cross}>+</span>
                         </span>
                     </li>;
     return (
